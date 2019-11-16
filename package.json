@@ -1,6 +1,6 @@
 {
   "name": "jsoft-react-view",
-  "version": "0.1.8",
+  "version": "1.0.0",
   "description": "A react.js package to simplify user interface development, based on react-native View and more...",
   "private": false,
   "repository": {
