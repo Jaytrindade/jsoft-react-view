@@ -30,7 +30,7 @@ function App() {
           cl="#fff"
           ft="50px arial"
           ftBold
-          hoverThis={{ transform: "scale(1deg)" }}
+          hoverThis={{ cl: "#ddd" }}
         >
           Hello jsoft-react-view!
         </View>
