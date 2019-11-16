@@ -1,17 +1,57 @@
 {
   "name": "jsoft-react-view",
-  "version": "0.1.0",
-  "private": true,
-  "dependencies": {
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
-    "react-scripts": "3.2.0"
+  "version": "0.1.8",
+  "description": "A react.js package to simplify user interface development, based on react-native View and more...",
+  "private": false,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Jaytrindade/jsoft-react-view.git"
   },
+  "keywords": [
+    "jsoft",
+    "react",
+    "view",
+    "agile",
+    "npm",
+    "package",
+    "jsoft-react-view",
+    "jsoft-agile",
+    "nodejs view",
+    "react-view",
+    "ready",
+    "tamplate"
+  ],
+  "author": "João Trindade <joaotrindade.soft@gmail.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Jaytrindade/jsoft-react-view/issues"
+  },
+  "homepage": "https://github.com/Jaytrindade/jsoft-react-view#readme",
+  "babel": {
+    "presets": [
+      "@babel/react"
+    ]
+  },
+  "main": "dist/index.js",
+  "module": "dist/index.js",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "publish:npm": "rm -rf dist && mkdir dist &&  babel src/view -d dist --copy-files"
+  },
+  "dependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1"
+  },
+  "peerDependencies": {
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "react-scripts": "3.2.0",
+    "styled-components": "^4.4.1"
   },
   "eslintConfig": {
     "extends": "react-app"
@@ -27,5 +67,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.7.0"
   }
 }
