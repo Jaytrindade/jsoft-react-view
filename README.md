@@ -2,13 +2,13 @@
 A [react.js](https://reactjs.org/) package to simplify **user interface** development, based on react-native **View** and more...
 
 ## Getting Started
-![](./src/view/assets/img/getting-started-code-1.png)
+![](https://raw.githubusercontent.com/Jaytrindade/jsoft-react-view/master/src/view/assets/img/getting-started-code-1.PNG)
 
 ###### On screens larger than 720px
-![](./src/view/assets/img/getting-started-view-1.png)
+![](https://raw.githubusercontent.com/Jaytrindade/jsoft-react-view/master/src/view/assets/img/getting-started-view-1.PNG)
 
 ###### On screens less than or equal to 720px
-![](./src/view/assets/img/getting-started-view-2.png)
+![](https://raw.githubusercontent.com/Jaytrindade/jsoft-react-view/master/src/view/assets/img/getting-started-view-2.PNG)
 
 ## Prerequisites
 This module was developed in `node.js` v10.16.3.
@@ -48,13 +48,13 @@ const { styled, others: {createGlobalStyle} } = styledComponents
 ```
 
 ## What jsoft-react-view offers us?
-`jsoft-react-view` gives us a simple way of styling our components as if using a template like `bootstrap` for example.
+`jsoft-react-view` gives us a simple way of styling our components as if using a `template` like `bootstrap` for example.
 
 ## What else is good?
 `jsoft-react-view` uses [`styled-components`](https://www.styled-components.com/) for styling its components. So you don't have to worry about prefixing css properties, class duplication, or unitized styles, and you have a reduced css syntax.
 
 ## Not everything is flowers!!
-`jsoft-react-view` does not have a simplified syntax for all css properties, so you will have to style using the style property or import the built-in [`styled-components`](https://www.styled-components.com/) and then do what you want using the [`styled-components`](https://www.styled-components.com/) components.
+`jsoft-react-view` does not have a simplified syntax for all css properties, so you will have to style using the style property or import the [`styled-components`](https://www.styled-components.com/) and then do what you want using the [`styled-components`](https://www.styled-components.com/) components.
 
 ## Looking at this code you already know how to use it. Right?
 
