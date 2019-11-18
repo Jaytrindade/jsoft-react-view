@@ -48,7 +48,7 @@ const { styled, others: {createGlobalStyle} } = styledComponents
 `jsoft-react-view` uses [`styled-components`](https://www.styled-components.com/) to style its components. Therefore, you don't have to worry about prefixing the css, class duplication, or unitized styles properties, and it also has a reduced css syntax.
 
 ## Not everything is flowers!!
-`jsoft-react-view` does not have a simplified syntax for all css properties, so you will have to style using the` style` property or import [`styled-components`](https://www.styled-components.com/) and do whatever you want using [`styled-components`](https://www.styled-components.com/) components.
+`jsoft-react-view` does not have a simplified syntax for all css properties, so you will have to style using the `pureStyle` or `style` property, or import [`styled-components`](https://www.styled-components.com/) and do whatever you want using [`styled-components`](https://www.styled-components.com/) components.
 
 ## How can I use this?
 ```javascript
@@ -69,7 +69,7 @@ The `el` property is used to specify which HTML element to use and, if not set, 
 Here are some examples of how cool it would be for you to use `jsoft-react-view`.
 
 ### Example 1 / Changing the `tag` of an `HTML` element.
-Suppose you want to change the `html` of a component, ie its `tag`, such as `div` to `h1`. How would it be done using `View`?
+Suppose you want to change the `HTML` of a component, ie its `tag`, such as `div` to `h1`. How would it be done using `View`?
 
 ```javascript
 import React, { useState } from "react";
@@ -86,7 +86,7 @@ function App() {
         ft="15px arial"
         ftLight
         onMouseEnter={() => setEl("h1")}
-        onMouseLeave={() => setEl("label")}
+        onMouseLeave={() => setEl("div")}
       >
         Hello jsoft-react-view!
       </View>
@@ -121,7 +121,7 @@ export default App;
 *By adding `VIEW_NULL` as a value of `el` you are automatically removing the element from `DOM`*
 
 ### Example 3 / Agility in the use of `CSS`.
-**Using `View` you can set your `CSS` in very short syntax without using the `style` property. There is a table that shows how to use this but we will show some peculiarities.**
+**Using `View` you can set your `CSS` in very short syntax without using the `pureStyle` or `style` property. There is a table that shows how to use this but we will show some peculiarities.**
 
 Suppose you intend to change, for example, a color of a child element of a container when the mouse is inside that container.
 
@@ -170,7 +170,91 @@ function App() {
 export default App;
 ```
 
-### Example 5 (`getRef`) / Referencing an Element.
+or for multiple resolutions:
+
+```javascript
+import React, { useState } from "react";
+import View from "jsoft-react-view";
+
+function App() {
+  return (
+    <>
+      <View
+        el="main"
+        psRelative 
+        wdHg="100%" 
+        bgCl="#09f"
+        _mediaScrean={[
+          {
+            dimensions: "min-width: 520px",
+            style: { bgCl: "#003" }
+          },
+          {
+            dimensions: "min-width: 900px",
+            style: { bgCl: "green" }
+          }
+        ]}
+      />
+    </>
+  );
+}
+
+export default App;
+```
+
+### Example 5 / Working with pure `CSS`.
+Using the `pureStyle` property, you set your styles to be using [`styled-components`](https://www.styled-components.com/) or rather you will be using [`styled-components`](https://www.styled-components.com/).
+
+```javascript
+import React, { useState } from "react";
+import View from "jsoft-react-view";
+
+function App() {
+  return (
+    <>
+      <View
+        el="main"
+        pureStyle={`
+          margin-top: 50px;
+          :hover {background-color: red}
+        `}
+      />
+    </>
+  );
+}
+
+export default App;
+```
+
+or like this:
+
+```javascript
+import React, { useState } from "react";
+import View from "jsoft-react-view";
+
+function App() {
+  return (
+    <>
+      <View
+        el="main"
+        psRelative 
+        wdHg="100%" 
+        bgCl="#09f"
+        _mediaScrean={{
+          dimensions: "max-width: 720px",
+          style: { bgCl: "#003" },
+          pureStyle: `padding: 20px;`
+        }}
+      />
+    </>
+  );
+}
+
+export default App;
+```
+*and so on...*
+
+### Example 6 (`getRef`) / Referencing an Element.
 ```javascript
 import React, { useState } from "react";
 import View from "jsoft-react-view";
@@ -193,7 +277,7 @@ export default App;
 ***These were some examples of how to use it and of course you can do much more according to your creativity.***
 
 ## CSS properties simplified
-Properties that are not listed in the table can be added using the `style` property.*
+Properties that are not listed in the table can be added using the `pureStyle` or` style` property.
 
 *There are some `CSS` properties that are not listed, but are directly supported by` Views` without changing the original name of `CSS`.*
 
@@ -247,7 +331,7 @@ Properties that are not listed in the table can be added using the `style` prope
 | `bgImg`                      	| `background-image`                                            	| `<View bgImg="url(...)" />`                                                                                                 	|
 | `bgSize`                     	| `background-size`                                             	| `<View bgSize="cover" />`                                                                                                   	|
 | `cl`                         	| `color`                                                       	| `<View cl="#09f" />`                                                                                                        	|
-| `placeholder`                	| `::placeholder`                                               	| `<View placeholder={{cl: "green"}} />`                                                                                      	|
+| `placeholderStyle`           	| `::placeholder`                                               	| `<View placeholderStyle={{cl: "green"}} />`                                                                                 	|
 | `ft`                         	| `font`                                                        	| `<View ft="13px arial" />`                                                                                                  	|
 | `ftThin`                     	| `font-weight: 100;`                                           	| `<View ftThin />`                                                                                                           	|
 | `ftLight`                    	| `font-weight: 300;`                                           	| `<View ftLight />`                                                                                                          	|
@@ -322,7 +406,8 @@ Properties that are not listed in the table can be added using the `style` prope
 | `activeThis`                 	| `:active`                                                     	| `<View activeThis={{bg: "green"}} />`                                                                                       	|
 | `elBefore`                   	| `::before`                                                    	| `<View elBefore={{bg: "blue"}} />`                                                                                          	|
 | `elAfter`                    	| `::after`                                                     	| `<View elAfter={{bg: "red"}} />`                                                                                            	|
-| `_mediaScrean`               	| `@media only screen and (min-width: 100px, max-width: 720px)` 	| `<View _mediaScrean={{dimensions: "min-width: 720px", style: {bg: "#09f"}}} />`                                             	|                                             	|
+| `pureStyle`                  	|                                                               	| `<View pureStyle={"margin-top: 50px; :hover {background-color: red} "}/>`                                                 	  |
+| `_mediaScrean`               	| `@media only screen and (min-width: 100px, max-width: 720px)` 	| `<View _mediaScrean={{dimensions: "min-width: 720px", style: {bg: "#09f"}}} />`                                             	|                                             	|                                             	|
 
 ## Contributing
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.

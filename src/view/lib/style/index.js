@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 const defaultElemenst = props => {
   let render = "";
+  if (props.pureStyle) render += props.pureStyle;
   if (props.ps) render += `position: ${props.ps};`;
   if (props.psRelative) render += `position: relative;`;
   if (props.psAbsolute) render += `position: relative;`;
@@ -174,10 +175,25 @@ const defaultElemenst = props => {
   if (props.activeThis) render += `&:active {${defaultElemenst(props.active)}}`;
   if (props.elBefore) render += `&::before{${defaultElemenst(props.elBefore)}}`;
   if (props.elAfter) render += `&::after{${defaultElemenst(props.elAfter)}}`;
-  if (props._mediaScrean)
-    render += `@media only screen and (${
-      props._mediaScrean.dimensions
-    }){${defaultElemenst(props._mediaScrean.style)}}`;
+  if (props._mediaScrean) {
+    if (Array.isArray(props._mediaScrean)) {
+      if (props._mediaScrean.length > 0) {
+        for (const element of props._mediaScrean) {
+          render += `@media only screen and (${
+            element.dimensions
+          }){${defaultElemenst(element.style)}${
+            element.pureStyle ? element.pureStyle : ""
+          }}`;
+        }
+      }
+    } else
+      render += `@media only screen and (${
+        props._mediaScrean.dimensions
+      }){${defaultElemenst(props._mediaScrean.style)}${
+        props._mediaScrean.pureStyle ? props._mediaScrean.pureStyle : ""
+      }}`;
+  }
+
   return render.trim();
 };
 
