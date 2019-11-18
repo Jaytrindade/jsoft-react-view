@@ -65,10 +65,10 @@ export default App
 ```
 The `el` property is used to specify which HTML element to use and, if not set, defaults to `div`.
 
-## Use cases
+## Simple examples of how to use
 Here are some examples of how cool it would be for you to use `jsoft-react-view`.
 
-##### Example 1 / Changing the `tag` of an `HTML` element.
+### Example 1 / Changing the `tag` of an `HTML` element.
 Suppose you want to change the `html` of a component, ie its `tag`, such as `div` to `h1`. How would it be done using `View`?
 
 ```javascript
@@ -98,7 +98,7 @@ export default App;
 ```
 *This way you change the `html` elements and with your creativity you can do much more.*
 
-##### Example 2 (VIEW_NULL) / Remove a component, or `HTML` element from` DOM`.
+### Example 2 (VIEW_NULL) / Remove a component, or `HTML` element from` DOM`.
 Suppose you have a messaging system and for some reason you want to remove any messages. How to make?
 
 ```javascript
@@ -120,7 +120,7 @@ export default App;
 ```
 *By adding `VIEW_NULL` as a value of `el` you are automatically removing the element from `DOM`*
 
-##### Example 3 / Agility in the use of `CSS`.
+### Example 3 / Agility in the use of `CSS`.
 **Using `View` you can set your `CSS` in very short syntax without using the `style` property. There is a table that shows how to use this but we will show some peculiarities.**
 
 Suppose you intend to change, for example, a color of a child element of a container when the mouse is inside that container.
@@ -143,7 +143,7 @@ export default App;
 ```
 *Inside `hoverEffectEl` you can pass your `query` as in pure `CSS`. Example: `hoverEffectEl ="+ h1", hoverEffectEl ="> label"` and so on.*
 
-##### Example 4 / Responsive layout.
+### Example 4 / Responsive layout.
 Using the `_mediaScrean` property you can define a display rule according to the dimensions provided.
 
 ```javascript
@@ -170,7 +170,7 @@ function App() {
 export default App;
 ```
 
-##### Example 5 (`getRef`) / Referencing an Element.
+### Example 5 (`getRef`) / Referencing an Element.
 ```javascript
 import React, { useState } from "react";
 import View from "jsoft-react-view";
