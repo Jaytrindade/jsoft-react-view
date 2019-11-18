@@ -4,21 +4,20 @@ import getEl from "./style";
 const View = props => {
   let { el = "div", getRef, ...others } = props,
     elementRef = useRef();
+  el = el.trim();
   useEffect(() => {
     if (getRef) getRef(elementRef);
   }, [getRef]);
+  let Component = null;
+  if (!el) Component = getEl("div");
+  else if (el !== "VIEW_NULL") Component = getEl(el);
 
-  if (el) {
-    el = el.toLowerCase().split("");
-    el[0] = el[0].toUpperCase();
-    el = el.join("");
-  }
-
-  let Component = getEl(el);
-  return (
+  return Component ? (
     <Component ref={elementRef} {...others}>
       {others.children}
     </Component>
+  ) : (
+    Component
   );
 };
 
