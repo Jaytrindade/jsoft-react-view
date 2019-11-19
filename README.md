@@ -144,7 +144,7 @@ export default App;
 *Inside `hoverEffectEl` you can pass your `query` as in pure `CSS`. Example: `hoverEffectEl ="+ h1", hoverEffectEl ="> label"` and so on.*
 
 ### Example 4 / Responsive layout.
-Using the `_mediaScrean` property you can define a display rule according to the dimensions provided.
+Using the `_mediaScreen` property you can define a display rule according to the dimensions provided.
 
 ```javascript
 import React, { useState } from "react";
@@ -158,7 +158,7 @@ function App() {
         psRelative 
         wdHg="100%" 
         bgCl="#09f"
-        _mediaScrean={{
+        _mediaScreen={{
           dimensions: "max-width: 720px",
           style: { bgCl: "#003" }
         }}
@@ -184,7 +184,7 @@ function App() {
         psRelative 
         wdHg="100%" 
         bgCl="#09f"
-        _mediaScrean={[
+        _mediaScreen={[
           {
             dimensions: "min-width: 520px",
             style: { bgCl: "#003" }
@@ -240,7 +240,7 @@ function App() {
         psRelative 
         wdHg="100%" 
         bgCl="#09f"
-        _mediaScrean={{
+        _mediaScreen={{
           dimensions: "max-width: 720px",
           style: { bgCl: "#003" },
           pureStyle: `padding: 20px;`
@@ -407,7 +407,7 @@ Properties that are not listed in the table can be added using the `pureStyle` o
 | `elBefore`                   	| `::before`                                                    	| `<View elBefore={{bg: "blue"}} />`                                                                                          	|
 | `elAfter`                    	| `::after`                                                     	| `<View elAfter={{bg: "red"}} />`                                                                                            	|
 | `pureStyle`                  	|                                                               	| `<View pureStyle={"margin-top: 50px; :hover {background-color: red} "}/>`                                                 	  |
-| `_mediaScrean`               	| `@media only screen and (min-width: 100px, max-width: 720px)` 	| `<View _mediaScrean={{dimensions: "min-width: 720px", style: {bg: "#09f"}}} />`                                             	|                                             	|                                             	|
+| `_mediaScreen`               	| `@media only screen and (min-width: 100px, max-width: 720px)` 	| `<View _mediaScreen={{dimensions: "min-width: 720px", style: {bg: "#09f"}}} />`                                             	|                                             	|                                             	|
 
 ## Contributing
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
