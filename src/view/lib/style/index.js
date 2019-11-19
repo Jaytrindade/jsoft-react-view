@@ -172,7 +172,8 @@ const defaultElemenst = props => {
     render += `&:active ${props.activeEffectEl || ""}{${defaultElemenst(
       props.active
     )}}`;
-  if (props.activeThis) render += `&:active {${defaultElemenst(props.active)}}`;
+  if (props.activeThis)
+    render += `&:active {${defaultElemenst(props.activeThis)}}`;
   if (props.elBefore) render += `&::before{${defaultElemenst(props.elBefore)}}`;
   if (props.elAfter) render += `&::after{${defaultElemenst(props.elAfter)}}`;
   if (props._mediaScreen) {
