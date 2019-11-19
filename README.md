@@ -2,7 +2,7 @@
 A [`react.js`](https://reactjs.org/) package to simplify *user interface* development quickly and simply based on `react-native` ` View` and more.
 
 ## Getting Started
-![](https://raw.githubusercontent.com/Jaytrindade/jsoft-react-view/master/src/view/assets/img/getting-started-code-2.PNG)
+![](https://raw.githubusercontent.com/Jaytrindade/jsoft-react-view/master/public/assets/img/getting-started-code-2.PNG)
 
 ## Prerequisites
 This module was developed in `node.js` v10.16.3.
