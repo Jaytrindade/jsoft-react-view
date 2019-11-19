@@ -34,6 +34,14 @@ function App() {
         >
           Hello jsoft-react-view!
         </View>
+
+        <View
+          el="main"
+          pureStyle={`
+          margin-top: 50px;
+          :hover {background-color: red}
+        `}
+        />
       </View>
       <GlobalStyle />
     </>
