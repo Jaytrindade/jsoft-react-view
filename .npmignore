@@ -12,6 +12,7 @@
 # package
 /src
 /public
+/build
 
 # misc
 .DS_Store
