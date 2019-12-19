@@ -6,7 +6,7 @@ export default {
   psFixed: "position:fixed",
   psSticky: "position:sticky",
   pd: "padding",
-  pdY: "padding-top:_val_;padding_bottom:_val",
+  pdY: "padding-top:_val_;padding-bottom:_val",
   pdX: "padding-left:_val_;padding-right:_val_",
   pdT: "padding-top",
   pdL: "padding-left",
