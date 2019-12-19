@@ -18,9 +18,9 @@ function App() {
         psRelative
         wdHg="100%"
         bgCl="#09f"
-        _mediaScrean={{
-          dimensions: "max-width: 720px",
-          style: { bgCl: "#003" }
+        _mediaScreen={{
+          dimensions: "max-width: 520px",
+          style: { bgCl: "purple" }
         }}
         getRef={ref => (refEl = ref)}
       >
@@ -34,17 +34,6 @@ function App() {
         >
           Hello jsoft-react-view!
         </View>
-        
-        <View
-          el="article"
-          pureStyle={`
-            padding: 10px;
-            :hover {background: red}
-            & + article {background: blue}
-        `}
-        />
-
-
       </View>
       <GlobalStyle />
     </>

@@ -17,12 +17,16 @@ Installation is done using the `npm install` command:
 
 ``` 
 $ npm install --save jsoft-react-view 
+or
+$ yarn add jsoft-react-view 
 ```
 
 or in development mode:
 
 ``` 
-$ npm install --save-dev jsoft-react-view 
+$ npm install --save-dev jsoft-react-view
+or
+$ yarn add jsoft-react-view --dev
 ```
 
 ## Loading
@@ -40,6 +44,8 @@ than
 
 const { styled, others: {createGlobalStyle} } = styledComponents
 ```
+## Demonstration
+See a [demonstration](https://youtu.be/n65BEJIJXs8) of how fast and productive it can be using `jsoft-react-view`
 
 ## What jsoft-react-view offers us?
 `jsoft-react-view` gives us a simple way of styling our components as if using a `template` like `bootstrap` for example.
@@ -142,6 +148,25 @@ function App() {
 export default App;
 ```
 *Inside `hoverEffectEl` you can pass your `query` as in pure `CSS`. Example: `hoverEffectEl ="+ h1", hoverEffectEl ="> label"` and so on.*
+
+or with `that` and `thatQuery`
+
+```javascript
+import React from "react";
+import View from "jsoft-react-view";
+
+function App() {
+  return (
+    <>
+      <View el="article" that={{cl: "#09f"}} thatQuery="> h1">
+          <View el="h1">change my color</View>
+      </View>
+    </>
+  );
+}
+
+export default App;
+```
 
 ### Example 4 / Responsive layout.
 Using the `_mediaScreen` property you can define a display rule according to the dimensions provided.
@@ -277,137 +302,160 @@ export default App;
 ***These were some examples of how to use it and of course you can do much more according to your creativity.***
 
 ## CSS properties simplified
-Properties that are not listed in the table can be added using the `pureStyle` or` style` property.
+Properties that are not listed can be added using the `pureStyle` or` style` property.
 
 *There are some `CSS` properties that are not listed, but are directly supported by` Views` without changing the original name of `CSS`.*
 
-| jsoft-react-view             	| Normal CSS Properties                                         	| example                                                                                                                     	|
-|------------------------------	|---------------------------------------------------------------	|-----------------------------------------------------------------------------------------------------------------------------	|
-| `ps`                         	| `position`                                                    	| `<View ps="relative" />`                                                                                                    	|
-| `psRelative`                 	| `position: relative;`                                         	| `<View psRelative />`                                                                                                       	|
-| `psAbsolute`                 	| `position: absolute;`                                         	| `<View psAbsolute />`                                                                                                       	|
-| `psFixed`                    	| `position: fixed;`                                            	| `<View psFixed />`                                                                                                          	|
-| `psSticky`                   	| `position: sticky;`                                           	| `<View psSticky />`                                                                                                         	|
-| `pd`                         	| `padding`                                                     	| `<View pd="10px" />`                                                                                                        	|
-| `pdY`                        	| `padding-top, padding-bottom`                                 	| `<View pdY="6px" />`                                                                                                        	|
-| `pdX`                        	| `padding-left, padding-right`                                 	| `<View pdX="8px" />`                                                                                                        	|
-| `pdT`                        	| `padding-top`                                                 	| `<View pdT="1px" />`                                                                                                        	|
-| `pdL`                        	| `padding-left`                                                	| `<View pdL="2px" />`                                                                                                        	|
-| `pdR`                        	| `padding-right`                                               	| `<View pdR="3px" />`                                                                                                        	|
-| `pdB`                        	| `padding-bottom`                                              	| `<View pdB="4px" />`                                                                                                        	|
-| `mg`                         	| `margin`                                                      	| `<View mg="1px" />`                                                                                                         	|
-| `mgY`                        	| `margin-top, margin-bottom`                                   	| `<View mgY="2px" />`                                                                                                        	|
-| `mgX`                        	| `margin-left, margin-right`                                   	| `<View mgX="3px" />`                                                                                                        	|
-| `mgT`                        	| `margin-top`                                                  	| `<View mgT="4px" />`                                                                                                        	|
-| `mgL`                        	| `margin-left`                                                 	| `<View mgL="5px" />`                                                                                                        	|
-| `mgR`                        	| `margin-right`                                                	| `<View mgR="6px" />`                                                                                                        	|
-| `mgB`                        	| `margin-bottom`                                               	| `<View mgB="7px" />`                                                                                                        	|
-| `bd`                         	| `border`                                                      	| `<View bd="1px" />`                                                                                                         	|
-| `bdY`                        	| `border-top, border-bottom`                                   	| `<View bdY="2px" />`                                                                                                        	|
-| `bdX`                        	| `border-left, border-right`                                   	| `<View bdX="3px" />`                                                                                                        	|
-| `bdT`                        	| `border-top`                                                  	| `<View bdT="4px" />`                                                                                                        	|
-| `bdL`                        	| `border-left`                                                 	| `<View bdL="5px" />`                                                                                                        	|
-| `bdR`                        	| `border-right`                                                	| `<View bdR="6px" />`                                                                                                        	|
-| `bdB`                        	| `border-bottom`                                               	| `<View bdB="7px" />`                                                                                                        	|
-| `bdStyle`                    	| `border-style`                                                	| `<View bdStyle="solid" />`                                                                                                  	|
-| `bdYstyle`                   	| `border-top-style, border-bottom-style`                       	| `<View bdYstyle="solid" />`                                                                                                 	|
-| `bdXstyle`                   	| `border-left-style, border-right-style`                       	| `<View bdXstyle="solid" />`                                                                                                 	|
-| `bdTstyle`                   	| `border-top-style`                                            	| `<View bdTstyle="solid" />`                                                                                                 	|
-| `bdLstyle`                   	| `border-left-style`                                           	| `<View bdLstyle="solid" />`                                                                                                 	|
-| `bdRstyle`                   	| `border-right-style`                                          	| `<View bdRstyle="solid" />`                                                                                                 	|
-| `bdBstyle`                   	| `border-bottom-style`                                         	| `<View bdBstyle="solid" />`                                                                                                 	|
-| `wd`                         	| `width`                                                       	| `<View wd="10px" />`                                                                                                        	|
-| `maxWd`                      	| `max-width`                                                   	| `<View maxWd="10px" />`                                                                                                     	|
-| `minWd`                      	| `min-width`                                                   	| `<View minWd="10px" />`                                                                                                     	|
-| `solidWd`                    	| `width, min-width, max-width`                                 	| `<View solidWd="10px" />`                                                                                                   	|
-| `hg`                         	| `height`                                                      	| `<View hg="10px" />`                                                                                                        	|
-| `maxHg`                      	| `max-height`                                                  	| `<View maxHg="10px" />`                                                                                                     	|
-| `minHg`                      	| `min-height`                                                  	| `<View minHg="10px" />`                                                                                                     	|
-| `solidHg`                    	| `height, min-height, max-height`                              	| `<View solidHg="10px" />`                                                                                                   	|
-| `wdHg`                       	| `width, height`                                               	| `<View wdHg="10px" />`                                                                                                      	|
-| `dimensions`                 	| `width, height, min-width, min-height, max-width, max-height` 	| `<View dimensions="10px" />`                                                                                                	|
-| `bg`                         	| `background`                                                  	| `<View bg="#09f url(...)" />`                                                                                               	|
-| `bgCl`                       	| `background-color`                                            	| `<View bgCl="#09f" />`                                                                                                      	|
-| `bgImg`                      	| `background-image`                                            	| `<View bgImg="url(...)" />`                                                                                                 	|
-| `bgSize`                     	| `background-size`                                             	| `<View bgSize="cover" />`                                                                                                   	|
-| `cl`                         	| `color`                                                       	| `<View cl="#09f" />`                                                                                                        	|
-| `placeholderStyle`           	| `::placeholder`                                               	| `<View placeholderStyle={{cl: "green"}} />`                                                                                 	|
-| `ft`                         	| `font`                                                        	| `<View ft="13px arial" />`                                                                                                  	|
-| `ftThin`                     	| `font-weight: 100;`                                           	| `<View ftThin />`                                                                                                           	|
-| `ftLight`                    	| `font-weight: 300;`                                           	| `<View ftLight />`                                                                                                          	|
-| `ftRegular`                  	| `font-weight: 400;`                                           	| `<View ftRegular />`                                                                                                        	|
-| `ftMediun`                   	| `font-weight: 500;`                                           	| `<View ftMediun />`                                                                                                         	|
-| `ftBold`                     	| `font-weight: 700;`                                           	| `<View ftBold/>`                                                                                                            	|
-| `ftSize`                     	| `font-size`                                                   	| `<View ftSize="20px" />`                                                                                                    	|
-| `ftFamily`                   	| `font-family`                                                 	| `<View ftFamily="arial cursive" />`                                                                                         	|
-| `lineHg`                     	| `line-height`                                                 	| `<View lineHg="30px" />`                                                                                                    	|
-| `txtTransform`               	| `text-transform`                                              	| `<View txtTransform="scale(2)" />`                                                                                          	|
-| `txtAlign`                   	| `text-align`                                                  	| `<View txtAlign="center" />`                                                                                                	|
-| `txtDecoration`              	| `text-decoration`                                             	| `<View txtDecoration="none" />`                                                                                             	|
-| `whiteSpace`                 	| `white-space`                                                 	| `<View whiteSpace="nowrap" />`                                                                                              	|
-| `wordBreak`                  	| `word-break`                                                  	| `<View wordBreak="break-all" />`                                                                                            	|
-| `liStyle`                    	| `list-style`                                                  	| `<View liStyle="square inside url("sqpurple.gif")" />`                                                                      	|
-| `elContent`                  	| `content`                                                     	| `<View elContent="jsoft" />`                                                                                                	|
-| `shadow`                     	| `box-shadow`                                                  	| `<View shadow="0 0 1px #000" />`                                                                                            	|
-| `txtShadow`                  	| `text-shadow`                                                 	| `<View txtShadow="0 0 1px blue" />`                                                                                         	|
-| `radius`                     	| `border-radius`                                               	| `<View radius="50%" />`                                                                                                     	|
-| `cln`                        	| `columns`                                                     	| `<View cln="100px 3" />`                                                                                                    	|
-| `clnCount`                   	| `column-count`                                                	| `<View clnCount="3" />`                                                                                                     	|
-| `clnGap`                     	| `column-gap`                                                  	| `<View clnGap="30px" />`                                                                                                    	|
-| `clWd`                       	| `column-width`                                                	| `<View clnWd="100px" />`                                                                                                    	|
-| `clnBreakIn`                 	| `column-break-inside, page-break-inside, break-inside`        	| `<View clnBreakIn="auto" />`                                                                                                	|
-| `index`                      	| `z-index`                                                     	| `<View index="-1" />`                                                                                                       	|
-| `scrollY`                    	| `overflow: hidden; overflow-y: auto;`                         	| `<View scrollY />`                                                                                                          	|
-| `scrollX`                    	| `overflow: hidden; overflow-x: auto;`                         	| `<View scrollX />`                                                                                                          	|
-| `scroll`                     	| `overflow: auto;`                                             	| `<View scroll />`                                                                                                           	|
-| `flex`                       	| `display: flex;`                                              	| `<View flex />`                                                                                                             	|
-| `flexDirection`              	| `flex-direction`                                              	| `<View flexDirection="column" />`                                                                                           	|
-| `flexRow`                    	| `flex-direction: row;`                                        	| `<View flexRow />`                                                                                                          	|
-| `flexRowReverse`             	| `flex-direction: row-reverse;`                                	| `<View flexRowReverse />`                                                                                                   	|
-| `flexColumn`                 	| `flex-direction: column;`                                     	| `<View flexColumn />`                                                                                                       	|
-| `flexColumnReverse`          	| `flex-direction: column-reverse;`                             	| `<View flexColumnReverse />`                                                                                                	|
-| `flexWrap`                   	| `flex-wrap: wrap;`                                            	| `<View flexWrap />`                                                                                                         	|
-| `flexWrapReverse`            	| `flex-wrap: wrap-reverse;`                                    	| `<View flexWrapReverse />`                                                                                                  	|
-| `flexNowrap`                 	| `flex-wrap: nowrap;`                                          	| `<View flexNowrap />`                                                                                                       	|
-| `justifyContent`             	| `justify-content`                                             	| `<View justifyContent="space-between" />`                                                                                   	|
-| `justifyContentStart`        	| `justify-content: flex-start;`                                	| `<View justifyContentStart />`                                                                                              	|
-| `justifyContentEnd`          	| `justify-content: flex-end;`                                  	| `<View justifyContentEnd />`                                                                                                	|
-| `justifyContentCenter`       	| `justify-content: center;`                                    	| `<View justifyContentCenter />`                                                                                             	|
-| `justifyContentBetween`      	| `justify-content: space-between;`                             	| `<View justifyContentBetween />`                                                                                            	|
-| `justifyContentAround`       	| `justify-content: space-around;`                              	| `<View justifyContentAround />`                                                                                             	|
-| `justifyContentEvenly`       	| `justify-content: space-evenly;`                              	| `<View justifyContentEvenly />`                                                                                             	|
-| `alignContent`               	| `align-content`                                               	| `<View alignContent="flex-end" />`                                                                                          	|
-| `alignContentStart`          	| `align-content: flex-start;`                                  	| `<View alignContentStart/>`                                                                                                 	|
-| `alignContentEnd`            	| `align-content: flex-end;`                                    	| `<View alignContentEnd />`                                                                                                  	|
-| `alignContentCenter`         	| `align-content: center;`                                      	| `<View alignContentCenter />`                                                                                               	|
-| `alignContentStretch`        	| `align-content: stretch;`                                     	| `<View alignContentStretch />`                                                                                              	|
-| `alignContentBaseline`       	| `align-content: baseline;`                                    	| `<View alignContentBaseline />`                                                                                             	|
-| `alignContentBetween`        	| `align-content: space-between;`                               	| `<View alignContentBetween />`                                                                                              	|
-| `alignContentAround`         	| `align-content: space-around;`                                	| `<View alignContentAround />`                                                                                               	|
-| `alignContentEvenly`         	| `align-content: space-evenly;`                                	| `<View alignContentEvenly />`                                                                                               	|
-| `alignItems`                 	| `align-items`                                                 	| `<View alignItems="center" />`                                                                                              	|
-| `alignItemsStart`            	| `align-items: flex-start;`                                    	| `<View alignItemsStart />`                                                                                                  	|
-| `alignItemsEnd`              	| `align-items: flex-end;`                                      	| `<View alignItemsEnd />`                                                                                                    	|
-| `alignItemsCenter`           	| `align-items: center;`                                        	| `<View alignItemsCenter />`                                                                                                 	|
-| `alignItemsStretch`          	| `align-items: stretch;`                                       	| `<View alignItemsStretch />`                                                                                                	|
-| `alignItemsBaseline`         	| `align-items: baseline;`                                      	| `<View alignItemsBaseline />`                                                                                               	|
-| `alignItemsBetween`          	| `align-items: space-between;`                                 	| `<View alignItemsBetween />`                                                                                                	|
-| `alignItemsAround`           	| `align-items: space-around;`                                  	| `<View alignItemsAround />`                                                                                                 	|
-| `alignItemsEvenly`           	| `align-items: space-evenly;`                                  	| `<View alignItemsEvenly/>`                                                                                                  	|
-| `flexGrow`                   	| `flex-grow: 1;`                                               	| `<View flexGrow />`                                                                                                         	|
-| `alignSelf`                  	| `align-self`                                                  	| `<View alignSelf="center"/>`                                                                                                	|
-| `hover, hoverEffectEl`       	| `:hover .something`                                           	| `<View hover={{cl: "#09f"}} hoverEffectEl=".something"><View el="span" className="something">Hello!</View></View>`          	|
-| `hoverThis`                  	| `:hover`                                                      	| `<View hoverThis={{bg: "green"}} />`                                                                                        	|
-| `focus, focusEffectEl`       	| `:focus .something`                                           	| `<View focus={{cl: "#09f"}} focusEffectEl=".something"><View el="span" className="something">Hello!</View></View>`          	|
-| `focusThis`                  	| `:focus`                                                      	| `<View focusThis={{bg: "green"}} />`                                                                                        	|
-| `focusWin, focusWinEffectEl` 	| `:focus-within .something`                                    	| `<View focusWin={{cl: "#09f"}} focusWinEffectEl=".something"><View el="span" className="something">Hello!</View></View>`    	|
-| `focusWinThis`               	| `:focus-within`                                               	| `<View focusWinThis={{bg: "green"}} />`                                                                                     	|
-| `active, activeEffectEl`     	| `:active .something`                                          	| `<View el="a" active={{cl: "#09f"}} activeEffectEl=".something"><View el="span" className="something">Hello!</View></View>` 	|
-| `activeThis`                 	| `:active`                                                     	| `<View activeThis={{bg: "green"}} />`                                                                                       	|
-| `elBefore`                   	| `::before`                                                    	| `<View elBefore={{bg: "blue"}} />`                                                                                          	|
-| `elAfter`                    	| `::after`                                                     	| `<View elAfter={{bg: "red"}} />`                                                                                            	|
-| `pureStyle`                  	|                                                               	| `<View pureStyle={"margin-top: 50px; :hover {background-color: red} "}/>`                                                 	  |
-| `_mediaScreen`               	| `@media only screen and (min-width: 100px, max-width: 720px)` 	| `<View _mediaScreen={{dimensions: "min-width: 720px", style: {bg: "#09f"}}} />`                                             	|                                             	|                                             	|
+```javascript
+{
+  ps: "position",
+  psRelative: "position:relative",
+  psAbsolute: "position:absolute",
+  psFixed: "position:fixed",
+  psSticky: "position:sticky",
+  pd: "padding",
+  pdY: "padding-top:_val_;padding_bottom:_val",
+  pdX: "padding-left:_val_;padding-right:_val_",
+  pdT: "padding-top",
+  pdL: "padding-left",
+  pdR: "padding-right",
+  pdB: "padding-bottom",
+  mg: "margin",
+  mgY: "margin-top:_val_;margin-bottom:_val_",
+  mgX: "margin-left:_val_;margin-right:_val_",
+  mgT: "margin-top",
+  mgL: "margin-left",
+  mgR: "margin-right",
+  mgB: "margin-bottom",
+  bd: "border",
+  bdY: "border-top:_val_;border-bottom:_val_",
+  bdX: "border-left:_val_;border-right:_val_",
+  bdT: "border-top",
+  bdL: "border-left",
+  bdR: "border-right",
+  bdB: "border-bottom",
+  bdStyle: "border-style",
+  bdYstyle: "border-top-style:_val_;border-bottom-style:_val_",
+  bdXstyle: "border-left-style:_val_;border-right-style:_val_",
+  bdTstyle: "border-top-style",
+  bdLstyle: "border-left-style",
+  bdRstyle: "border-right-style",
+  bdBstyle: "border-bottom-style",
+  bdBox: "box-sizing:border-box",
+  bdSizing: "box-sizing",
+  wd: "width",
+  maxWd: "max-width",
+  minWd: "min-width",
+  solidWd: "min-width:_val_;width:_val_;max-width:_val_",
+  hg: "height",
+  maxHg: "max-height",
+  minHg: "min-height",
+  solidHg: "min-height:_val_;height:_val_;max-height:_Val_",
+  wdHg: "width:_val_;height:_val_",
+  dimensions:
+    "min-width:_val_;width:_val_;max-width:_val_;min-height:_val_;height:_val_;max-height:_Val_",
+  bg: "background",
+  bgCl: "background-color",
+  bgImg: "background-image",
+  bgSize: "background-size",
+  top: "top",
+  left: "left",
+  right: "right",
+  bottom: "bottom",
+  cl: "color",
+  ft: "font",
+  ftThin: "font-weight:100",
+  ftLight: "font-weight:300",
+  ftRegular: "font-weight:400",
+  ftMedium: "font-weight:500",
+  ftBold: "font-weight:700",
+  ftSize: "font-size",
+  ftSizeAdj: "font-size-adjust",
+  ftFamily: "font-family",
+  ftStyle: "font-style",
+  ftVar: "font-variant",
+  ftWg: "font-weight",
+  lineHg: "line-height",
+  txtTransform: "text-transform",
+  txtAlign: "text-align",
+  txtDecoration: "text-decoration",
+  whiteSpace: "white-space",
+  wordBreak: "word-break",
+  liStyle: "list-style",
+  elContent: "content",
+  transition: "transition",
+  shadow: "box-shadow",
+  txtShadow: "box-shadow",
+  radius: "border-radius",
+  transform: "transform",
+  display: "display",
+  cln: "column",
+  clnCount: "column-count",
+  clnGap: "column-gap",
+  clnWd: "column-width",
+  clnBreakIn:
+    "column-break-inside:_val_;page-break-inside:_val_;break-inside:_val_",
+  float: "float",
+  resize: "resize",
+  opacity: "opacity",
+  index: "z-index",
+  scroll: "overflow:auto",
+  scrollY: "overflow:hidden;overflow-y:auto",
+  scrollX: "overflow:hidden;overflow-x:auto",
+  Flex: "flex",
+  flex: "display:flex",
+  flexDirection: "flex-direction",
+  flexRow: "flex-direction:row",
+  flexRowReverse: "flex-direction:row-reverse",
+  flexColumn: "flex-direction:column",
+  flexColumnReverse: "flex-direction:column-reverse",
+  flexWrap: "flex-wrap",
+  flexWrapReverse: "flex-wrap:wrap-reverse",
+  flexNowrap: "flex-wrap:nowrap",
+  order: "order",
+  justifyContent: "justify-content",
+  justifyContentStart: "justify-content:flex-start",
+  justifyContentEnd: "justify-content:flex-end",
+  justifyContentCenter: "justify-content:center",
+  justifyContentBetween: "justify-content:space-between",
+  justifyContentAround: "justify-content:space-around",
+  justifyContentEvenly: "justify-content:space-evenly",
+  alignItems: "align-items",
+  alignItemsStart: "align-items:flex-start",
+  alignItemsEnd: "align-items:flex-end",
+  alignItemsCenter: "align-items:center",
+  alignContent: "align-content",
+  alignContentStart: "align-content:flex-start",
+  alignContentEnd: "align-content:flex-end",
+  alignContentCenter: "align-content:center",
+  alignContentStretch: "align-content:stretch",
+  alignContentBaseline: "align-content:baseline",
+  alignContentBetween: "align-content:space-between",
+  alignContentAround: "align-content:space-around",
+  alignContentEvenly: "align-content:space-evenly",
+  FlexGrow: "flex-grow",
+  flexGrow: "flex-grow:1",
+  alignSelf: "align-self",
+  grid: "grid",
+  placeholderStyle: "&::placeholder",
+  hoverThis: "&:hover",
+  hover: "&:hover",
+  focusThis: "&:focus",
+  focus: "&:focus",
+  focusInsideThis: "&:focus-within",
+  focusInside: "&:focus-within",
+  focusWinThis: "&:focus-within",
+  focusWin: "&:focus-within",
+  activeThis: "&:active",
+  active: "&:active",
+  elBefore: "&::before",
+  elAfter: "&::after",
+  elLeft: "&:left",
+  elRight: "&:right",
+  that: "&",
+  _mediaScreen: "@media only screen and (_dm_){_style_}"
+}
+```
 
 ## Contributing
 Please read [CONTRIBUTING.md](./CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
