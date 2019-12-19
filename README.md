@@ -399,6 +399,7 @@ Properties that are not listed can be added using the `pureStyle` or` style` pro
   resize: "resize",
   opacity: "opacity",
   index: "z-index",
+  cursor: "cursor",
   scroll: "overflow:auto",
   scrollY: "overflow:hidden;overflow-y:auto",
   scrollX: "overflow:hidden;overflow-x:auto",
